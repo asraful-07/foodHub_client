@@ -50,7 +50,7 @@ export default function EditCategoryDialog({
     setFetchLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:5001/api/categories/${category.id}`,
+        `https://foodhunt-eight.vercel.app/api/categories/${category.id}`,
         {
           credentials: "include",
         },
@@ -81,7 +81,7 @@ export default function EditCategoryDialog({
 
     try {
       const res = await fetch(
-        `http://localhost:5001/api/categories/${category.id}`,
+        `https://foodhunt-eight.vercel.app/api/categories/${category.id}`,
         {
           method: "PUT",
           headers: {

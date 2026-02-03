@@ -14,7 +14,7 @@ export default function OrdersPage() {
     setLoading(true);
     setError(null);
 
-    fetch("http://localhost:5001/api/order", {
+    fetch("https://foodhunt-eight.vercel.app/api/order", {
       credentials: "include",
     })
       .then((res) => res.json())

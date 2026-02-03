@@ -55,7 +55,7 @@ export default function MealPage() {
       }
 
       const response = await fetch(
-        `http://localhost:5001/api/meals?${params.toString()}`,
+        `https://foodhunt-eight.vercel.app/api/meals?${params.toString()}`,
         { credentials: "include" },
       );
 
@@ -76,9 +76,12 @@ export default function MealPage() {
   // Fetch categories
   const fetchCategories = async () => {
     try {
-      const res = await fetch("http://localhost:5001/api/categories", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://foodhunt-eight.vercel.app/api/categories",
+        {
+          credentials: "include",
+        },
+      );
       if (!res.ok) throw new Error("Failed to fetch categories");
       const data = await res.json();
       setCategories(data.data || []);

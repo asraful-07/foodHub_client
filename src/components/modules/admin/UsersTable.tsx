@@ -33,14 +33,17 @@ export default function UsersTable({ users, onStatusUpdate }: UsersTableProps) {
     setUpdatingUserId(userId);
 
     try {
-      const response = await fetch(`http://localhost:5001/api/user/${userId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `https://foodhunt-eight.vercel.app/api/user/${userId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({ status: newStatus }),
         },
-        credentials: "include",
-        body: JSON.stringify({ status: newStatus }),
-      });
+      );
 
       const data = await response.json();
 

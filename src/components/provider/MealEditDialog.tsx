@@ -87,14 +87,17 @@ export default function MealEditDialog({
     setLoading(true);
 
     try {
-      const res = await fetch(`http://localhost:5001/api/meals/${meal.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        `https://foodhunt-eight.vercel.app/api/meals/${meal.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(formData),
         },
-        credentials: "include",
-        body: JSON.stringify(formData),
-      });
+      );
 
       const data = await res.json();
 

@@ -47,9 +47,12 @@ export default function CreateMealPage() {
     const fetchCategories = async () => {
       setLoadingCategories(true);
       try {
-        const res = await fetch("http://localhost:5001/api/categories", {
-          credentials: "include",
-        });
+        const res = await fetch(
+          "https://foodhunt-eight.vercel.app/api/categories",
+          {
+            credentials: "include",
+          },
+        );
         const data = await res.json();
         if (data.success) {
           setCategories(data.data);
@@ -97,7 +100,7 @@ export default function CreateMealPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5001/api/meals", {
+      const res = await fetch("https://foodhunt-eight.vercel.app/api/meals", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

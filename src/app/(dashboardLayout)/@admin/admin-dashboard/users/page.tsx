@@ -10,7 +10,7 @@ export default function UsersPage() {
   const [loading, setLoading] = useState(true);
 
   const fetchUsers = () => {
-    fetch("http://localhost:5001/api/user", {
+    fetch("https://foodhunt-eight.vercel.app/api/user", {
       credentials: "include",
     })
       .then((res) => res.json())

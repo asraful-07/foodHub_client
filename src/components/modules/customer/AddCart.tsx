@@ -29,7 +29,7 @@ export default function AddCart({ product }: { product: Product }) {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5001/api/order", {
+      const res = await fetch("https://foodhunt-eight.vercel.app/api/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

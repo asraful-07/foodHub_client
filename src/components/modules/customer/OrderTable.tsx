@@ -91,9 +91,12 @@ export default function OrdersTable({
 
   const handleViewOrder = async (orderId: string) => {
     try {
-      const res = await fetch(`http://localhost:5001/api/order/${orderId}`, {
-        credentials: "include",
-      });
+      const res = await fetch(
+        `https://foodhunt-eight.vercel.app/api/order/${orderId}`,
+        {
+          credentials: "include",
+        },
+      );
       const data = await res.json();
 
       if (data.success) {
@@ -111,12 +114,15 @@ export default function OrdersTable({
     setUpdatingOrderId(orderId);
 
     try {
-      const res = await fetch(`http://localhost:5001/api/order/${orderId}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ status: newStatus }),
-      });
+      const res = await fetch(
+        `https://foodhunt-eight.vercel.app/api/order/${orderId}`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ status: newStatus }),
+        },
+      );
 
       const data = await res.json();
 

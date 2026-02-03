@@ -60,7 +60,7 @@ export default function AddCartPage() {
     setLoading(true);
     setError(null);
 
-    fetch("http://localhost:5001/api/cart", {
+    fetch("https://foodhunt-eight.vercel.app/api/cart", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -86,7 +86,7 @@ export default function AddCartPage() {
 
     try {
       const response = await fetch(
-        `http://localhost:5001/api/cart/item/${itemId}`,
+        `https://foodhunt-eight.vercel.app/api/cart/item/${itemId}`,
         {
           method: "DELETE",
           credentials: "include",
@@ -117,10 +117,13 @@ export default function AddCartPage() {
     setClearingCart(true);
 
     try {
-      const response = await fetch("http://localhost:5001/api/cart/clear", {
-        method: "DELETE",
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://foodhunt-eight.vercel.app/api/cart/clear",
+        {
+          method: "DELETE",
+          credentials: "include",
+        },
+      );
 
       const result = await response.json();
 

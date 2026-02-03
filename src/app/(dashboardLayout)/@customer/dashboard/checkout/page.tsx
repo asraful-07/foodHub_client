@@ -62,7 +62,7 @@ export default function CheckoutPage() {
     setLoading(true);
     setError(null);
 
-    fetch("http://localhost:5001/api/cart", {
+    fetch("https://foodhunt-eight.vercel.app/api/cart", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -114,18 +114,21 @@ export default function CheckoutPage() {
     setPlacingOrder(true);
 
     try {
-      const response = await fetch("http://localhost:5001/api/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://foodhunt-eight.vercel.app/api/order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({
+            providerId: providerId,
+            deliveryAddress: deliveryAddress.trim(),
+            items: items,
+          }),
         },
-        credentials: "include",
-        body: JSON.stringify({
-          providerId: providerId,
-          deliveryAddress: deliveryAddress.trim(),
-          items: items,
-        }),
-      });
+      );
 
       const result = await response.json();
 

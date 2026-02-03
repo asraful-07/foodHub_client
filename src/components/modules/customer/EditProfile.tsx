@@ -68,9 +68,12 @@ export default function Profile() {
   const fetchUserData = async (): Promise<void> => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5001/api/session", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://foodhunt-eight.vercel.app/api/session",
+        {
+          credentials: "include",
+        },
+      );
 
       if (!response.ok) throw new Error("Failed to fetch user data");
 
@@ -128,7 +131,7 @@ export default function Profile() {
       setUpdating(true);
 
       // Add your API call here to update the profile
-      // const response = await fetch("http://localhost:5001/api/users/update", {
+      // const response = await fetch("https://foodhunt-eight.vercel.app/api/users/update", {
       //   method: "PUT",
       //   credentials: "include",
       //   headers: {

@@ -40,14 +40,17 @@ export default function AddCategoryDialog({
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5001/api/categories", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://foodhunt-eight.vercel.app/api/categories",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({ name: name.trim() }),
         },
-        credentials: "include",
-        body: JSON.stringify({ name: name.trim() }),
-      });
+      );
 
       const data = await res.json();
 

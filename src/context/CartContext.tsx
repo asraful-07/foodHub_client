@@ -29,7 +29,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const fetchCart = async () => {
     try {
-      const res = await fetch("http://localhost:5001/api/cart", {
+      const res = await fetch("https://foodhunt-eight.vercel.app/api/cart", {
         credentials: "include",
         cache: "no-store",
       });

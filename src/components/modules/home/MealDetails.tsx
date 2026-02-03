@@ -79,7 +79,7 @@ export default function MealDetailsClient({ data }: { data: MealData }) {
 
   const fetchReviews = () => {
     setReviewsLoading(true);
-    fetch(`http://localhost:5001/api/review?mealId=${data.id}`, {
+    fetch(`https://foodhunt-eight.vercel.app/api/review?mealId=${data.id}`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -100,17 +100,20 @@ export default function MealDetailsClient({ data }: { data: MealData }) {
   const handleAddToCart = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5001/api/cart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://foodhunt-eight.vercel.app/api/cart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({
+            mealId: data.id,
+            quantity: quantity,
+          }),
         },
-        credentials: "include",
-        body: JSON.stringify({
-          mealId: data.id,
-          quantity: quantity,
-        }),
-      });
+      );
 
       const result = await response.json();
 
@@ -137,18 +140,21 @@ export default function MealDetailsClient({ data }: { data: MealData }) {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5001/api/review", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://foodhunt-eight.vercel.app/api/review",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({
+            mealId: data.id,
+            rating: rating,
+            comment: comment || null,
+          }),
         },
-        credentials: "include",
-        body: JSON.stringify({
-          mealId: data.id,
-          rating: rating,
-          comment: comment || null,
-        }),
-      });
+      );
 
       const result = await response.json();
 

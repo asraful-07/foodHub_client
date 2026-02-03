@@ -1,4 +1,4 @@
-const NEXT_PUBLIC_API_URL = "http://localhost:5001";
+const NEXT_PUBLIC_API_URL = "https://foodhunt-eight.vercel.app";
 
 export const ordersService = {
   getOrders: async function () {

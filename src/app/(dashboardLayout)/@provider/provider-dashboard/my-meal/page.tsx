@@ -34,9 +34,12 @@ export default function MyMealsPage() {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:5001/api/meals/provider/menu", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://foodhunt-eight.vercel.app/api/meals/provider/menu",
+        {
+          credentials: "include",
+        },
+      );
       const data = await res.json();
 
       if (data.success) {
@@ -59,10 +62,13 @@ export default function MyMealsPage() {
     if (!confirm("Are you sure you want to delete this meal?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5001/api/meals/${id}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
+      const res = await fetch(
+        `https://foodhunt-eight.vercel.app/api/meals/${id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        },
+      );
       const data = await res.json();
 
       if (data.success) {

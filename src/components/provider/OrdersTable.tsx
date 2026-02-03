@@ -70,7 +70,7 @@ export default function OrdersTable({
   const handleViewOrder = async (orderId: string) => {
     try {
       const response = await fetch(
-        `http://localhost:5001/api/order/${orderId}`,
+        `https://foodhunt-eight.vercel.app/api/order/${orderId}`,
         {
           credentials: "include",
         },
@@ -95,7 +95,7 @@ export default function OrdersTable({
 
     try {
       const response = await fetch(
-        `http://localhost:5001/api/order/${orderId}`,
+        `https://foodhunt-eight.vercel.app/api/order/${orderId}`,
         {
           method: "PATCH",
           headers: {

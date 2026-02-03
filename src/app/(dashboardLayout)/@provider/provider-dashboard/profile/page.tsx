@@ -30,14 +30,17 @@ export default function RequestProviderProfile() {
     setSuccess(false);
 
     try {
-      const response = await fetch("http://localhost:5001/api/provider", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://foodhunt-eight.vercel.app/api/provider",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(formData),
         },
-        credentials: "include",
-        body: JSON.stringify(formData),
-      });
+      );
 
       const data = await response.json();
 

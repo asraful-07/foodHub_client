@@ -26,9 +26,12 @@ export default function CategoriesPage() {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:5001/api/categories", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://foodhunt-eight.vercel.app/api/categories",
+        {
+          credentials: "include",
+        },
+      );
       const data = await res.json();
 
       if (data.success) {
@@ -51,10 +54,13 @@ export default function CategoriesPage() {
     if (!confirm("Are you sure you want to delete this category?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5001/api/categories/${id}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
+      const res = await fetch(
+        `https://foodhunt-eight.vercel.app/api/categories/${id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        },
+      );
       const data = await res.json();
 
       if (data.success) {
