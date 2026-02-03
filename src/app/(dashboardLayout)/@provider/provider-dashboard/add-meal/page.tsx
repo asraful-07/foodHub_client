@@ -42,7 +42,7 @@ export default function CreateMealPage() {
     dietaryPreferences: "NON_VEG",
   });
 
-  // Fetch categories on component mount
+  // Fetch categories on component mount update
   useState(() => {
     const fetchCategories = async () => {
       setLoadingCategories(true);
