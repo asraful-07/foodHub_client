@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Roles } from "@/constants/roles";
 import { userService } from "@/service/user.service";
+export const dynamic = "force-dynamic";
 
 export default async function DashboardLayout({
   admin,

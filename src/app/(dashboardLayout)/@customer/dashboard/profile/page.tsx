@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Mail, Star, Shield, Calendar, Edit } from "lucide-react";
 import Link from "next/link";
+export const dynamic = "force-dynamic";
 
 export default async function Profile() {
   const { data } = await userService.getSession();

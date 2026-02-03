@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+export const dynamic = "force-dynamic";
 
 const AUTH_URL = process.env.AUTH_URL;
 
