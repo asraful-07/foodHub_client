@@ -110,7 +110,7 @@ export default function CreateMealPage() {
 
       if (data.success) {
         toast.success("Meal created successfully");
-        router.push("/admin-dashboard/my-meal");
+        router.push("/provider-dashboard/my-meal");
       } else {
         toast.error(data.message || "Failed to create meal");
       }
