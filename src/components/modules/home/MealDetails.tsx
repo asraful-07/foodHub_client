@@ -202,8 +202,7 @@ export default function MealDetailsClient({ data }: { data: MealData }) {
                 <Image
                   src={data.image[selectedImage] || data.image[0]}
                   alt={data.name}
-                  width={600}
-                  height={600}
+                  fill
                   className="object-cover p-4"
                   priority
                 />

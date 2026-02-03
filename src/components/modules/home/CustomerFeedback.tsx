@@ -108,7 +108,7 @@ export default function CustomerFeedback() {
   const CARD_WIDTH = 280;
   const GAP = 24;
   const SCROLL_AMOUNT = CARD_WIDTH + GAP;
-  const AUTO_SCROLL_INTERVAL = 3000; // 3 seconds
+  const AUTO_SCROLL_INTERVAL = 2000;
 
   const scroll = (direction: "left" | "right") => {
     const container = scrollContainerRef.current;
@@ -201,7 +201,7 @@ export default function CustomerFeedback() {
   }, [isHovering, isAutoScrolling]);
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-14">
+    <section className="w-full max-w-7xl mx-auto px-4 pt-14">
       <div
         className="rounded-3xl p-8 relative"
         onMouseEnter={() => setIsHovering(true)}
@@ -210,7 +210,7 @@ export default function CustomerFeedback() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-gray-900">
-            Why Customers Choose Foodhub
+            Why Customers Choose FoodHub
           </h2>
 
           <div className="flex items-center gap-4">

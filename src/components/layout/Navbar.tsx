@@ -30,7 +30,7 @@ export default function Navbar({ isLoggedIn }: NavbarProps) {
   const menuItems = [
     { href: "/", label: "Home", icon: FaHome },
     { href: "/about", label: "About", icon: FaInfoCircle },
-    { href: "/contact", label: "Contact", icon: FaEnvelope },
+    { href: "/blog", label: "Blog", icon: FaEnvelope },
     { href: "/meal", label: "Meal", icon: FaUtensils },
   ];
 

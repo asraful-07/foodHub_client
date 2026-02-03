@@ -31,6 +31,10 @@ export const providerRoutes: Route[] = [
         url: "/provider-dashboard/orders",
       },
       {
+        title: "Provider Profile Create",
+        url: "/provider-dashboard/profile",
+      },
+      {
         title: "Home",
         url: "/",
       },
