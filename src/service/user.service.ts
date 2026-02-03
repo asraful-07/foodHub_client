@@ -1,14 +1,14 @@
 import { cookies } from "next/headers";
 export const dynamic = "force-dynamic";
 
-const AUTH_URL = process.env.AUTH_URL;
+const NEXT_PUBLIC_AUTH_URL = process.env.NEXT_PUBLIC_AUTH_URL;
 
 export const userService = {
   getSession: async function () {
     try {
       const cookieStore = await cookies();
 
-      const res = await fetch(`${AUTH_URL}/get-session`, {
+      const res = await fetch(`${NEXT_PUBLIC_AUTH_URL}/get-session`, {
         headers: {
           Cookie: cookieStore.toString(),
         },

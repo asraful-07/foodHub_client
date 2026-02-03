@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-const API_URL = process.env.API_URL;
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface ServiceOptions {
   cache?: RequestCache;
@@ -21,7 +21,7 @@ interface GetMealsParams {
 export const mealService = {
   getMeals: async (params?: GetMealsParams, options?: ServiceOptions) => {
     try {
-      const url = new URL(`${API_URL}/api/meals`);
+      const url = new URL(`${NEXT_PUBLIC_API_URL}/api/meals`);
 
       if (params) {
         Object.entries(params).forEach(([key, value]) => {
@@ -63,7 +63,7 @@ export const mealService = {
   createMeal: async (mealData: any) => {
     const cookieStore = await cookies();
     try {
-      const res = await fetch(`${API_URL}/api/meals`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/meals`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ export const mealService = {
       if (options?.cache) config.cache = options.cache;
       if (options?.revalidate) config.next = { revalidate: options.revalidate };
 
-      const res = await fetch(`${API_URL}/api/meals/${id}`, config);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/meals/${id}`, config);
 
       if (!res.ok) throw new Error("Failed to fetch meal");
 
@@ -124,7 +124,7 @@ export const mealService = {
     const cookieStore = await cookies();
 
     try {
-      const res = await fetch(`${API_URL}/api/meals/${id}`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/meals/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -155,7 +155,7 @@ export const mealService = {
     const cookieStore = await cookies();
 
     try {
-      const res = await fetch(`${API_URL}/api/meals/${id}`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/meals/${id}`, {
         method: "DELETE",
         headers: {
           Cookie: cookieStore.toString(),

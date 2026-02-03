@@ -1,9 +1,9 @@
-const API_URL = "http://localhost:5001";
+const NEXT_PUBLIC_API_URL = "http://localhost:5001";
 
 export const ordersService = {
   getOrders: async function () {
     try {
-      const res = await fetch(`${API_URL}/api/order`);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/order`);
       const data = await res.json();
       return { data, error: null };
     } catch (error) {
@@ -14,7 +14,7 @@ export const ordersService = {
   // GET SINGLE GADGET
   getSingleGadget: async function (id: string) {
     try {
-      const res = await fetch(`${API_URL}/api/order/${id}`);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/order/${id}`);
       const data = await res.json();
       return { data, error: null };
     } catch (error) {
@@ -25,7 +25,7 @@ export const ordersService = {
   // CREATE GADGET (POST)
   createGadget: async function (payload: any) {
     try {
-      const res = await fetch(`${API_URL}/api/order`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const ordersService = {
   // UPDATE GADGET (PUT)
   updateGadget: async function (id: string, payload: any) {
     try {
-      const res = await fetch(`${API_URL}/api/order/${id}`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/order/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export const ordersService = {
   // 🔹 DELETE GADGET
   deleteGadget: async function (id: string) {
     try {
-      const res = await fetch(`${API_URL}/api/order/${id}`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/order/${id}`, {
         method: "DELETE",
       });
 

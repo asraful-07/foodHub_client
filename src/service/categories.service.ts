@@ -1,9 +1,9 @@
-const API_URL = process.env.API_URL;
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const categoryService = {
   getCategories: async () => {
     try {
-      const res = await fetch(`${API_URL}/api/categories`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/categories`, {
         cache: "no-store",
       });
 

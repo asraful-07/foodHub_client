@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
 
-const API_URL = "http://localhost:5001";
+const NEXT_PUBLIC_API_URL = "http://localhost:5001";
 
 export const authService = {
   getUsers: async function () {
     try {
       const cookieStore = cookies();
-      const res = await fetch(`${API_URL}/api/user`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/user`, {
         headers: {
           "Content-Type": "application/json",
           Cookie: cookieStore.toString(),
