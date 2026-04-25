@@ -8,7 +8,11 @@ The platform allows users to browse meals, view detailed food information, and e
 ## 🚀 Live Project
 
 🔗 **Live URL:**  
-(https://foodhunt-client.vercel.app)
+(https://food-three-self.vercel.app)
+
+🔗 **Live URL:**  
+(https://foodhunt-eight.vercel.app)
+
 
 ---
 
