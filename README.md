@@ -7,11 +7,11 @@ The platform allows users to browse meals, view detailed food information, and e
 
 ## 🚀 Live Project
 
-🔗 **Live URL:**  
-(https://food-three-self.vercel.app)
+🔗 **Frontend Live URL:**  
+(https://food-app-nu-rose.vercel.app)
 
-🔗 **Live URL:**  
-(https://foodhunt-eight.vercel.app)
+🔗 **Backend Live URL:**  
+(https://food-hunt-server-psi.vercel.app)
 
 
 ---
@@ -19,7 +19,7 @@ The platform allows users to browse meals, view detailed food information, and e
 ## 🎥 Project Demo Video
 
 🎬 **Video URL:**  
-https://your-project-demo-video-url.com
+(https://www.loom.com/share/e631eae7cd9b4d8db34a69276953f1bf)
 
 ---
 
