@@ -1,4 +1,4 @@
-# 🍔 FoodHub – Frontend Application
+## 🍔 FoodHub – Frontend Application
 
 FoodHub is a modern food ordering frontend application built with **Next.js**.  
 The platform allows users to browse meals, view detailed food information, and enables admins/providers to manage meals efficiently through a clean and responsive dashboard.
